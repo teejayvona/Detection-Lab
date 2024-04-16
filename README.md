@@ -1,5 +1,5 @@
 
-# Active Directory 
+# Active Directory Project
 
 ## Objective
 
@@ -14,7 +14,6 @@ The goal of the Detection Lab project was to create a regulated setting to simul
 - Development of critical thinking and problem-solving skills in cybersecurity.
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
 - Splunk - Utilized as a Security Information and Event Management (SIEM) platform, Splunk facilitates the ingestion and analysis of logs for comprehensive security monitoring and incident detection.
 - Wireshark - Employed as a network analysis tool, Wireshark enables the capturing and examination of network traffic for the identification of potential security threats and performance issues.
