@@ -22,10 +22,78 @@ The goal of the Detection Lab project was to create a regulated setting to simul
 - Active Directory - Simulated real-world centralized directory service responsible for overseeing user account management, group memberships, and access permissions throughout the network.
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
+### Ref 1: Network Diagram
 
-Example below.
+![AD Logical Diagram](https://github.com/teejayvona/Detection-Lab/assets/33003865/c2b1b5b5-a729-4eca-8970-3be2d6353009)
 
-*Ref 1: Network Diagram*
+This is the network diagram of what I intend achieving at the end of the project
+All these was done using Virtual Box
+
+### Ref 2: Sysmon Configuration File
+
+I made use of Olaf Hartong configuration for my sysmon configuration
+
+https://github.com/olafhartong/sysmon-modular
+
+### Ref 3: Splunk inputs.conf
+
+After installing splunk forwarder to listen to my splunk server on 192.168.10.10 on the default port 9997. We need to configure the telemetries to send by opening a Notepad with administrator right. The code below was then insert and saved on the splunk forwarder local file as "inputs.conf"
+
+[WinEventLog://Application]
+
+index = endpoint
+
+disabled = false
+
+[WinEventLog://Security]
+
+index = endpoint
+
+disabled = false
+
+[WinEventLog://System]
+
+index = endpoint
+
+disabled = false
+
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+
+index = endpoint
+
+disabled = false
+
+renderXml = true
+
+source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+
+### Ref 4: Configure Splunk
+
+Log onto 192.168.10.10:8000 with correct details. Go to settings and then indexes to "endpoint" as a new index
+
+Also from setting, select forwarding and listening and add a new port for listening. The listening port is 9997
+
+You might experience a little technical issue like me as below.
+
+![VirtualBox_Windows 10_16_04_2024_21_48_00](https://github.com/teejayvona/Detection-Lab/assets/33003865/48ff714c-7bc9-4139-bccf-9b11e45ef170)
+
+This can be fixed by changing directory on the Splunk server to:
+
+cd /opt/splunk/etc/system/default/
+
+sudo vim server.conf
+
+![VirtualBox_Splunk Server_16_04_2024_22_39_07](https://github.com/teejayvona/Detection-Lab/assets/33003865/7c76c8dc-560f-43ff-a70b-3c7f98c09ebd)
+
+cd /opt/splunk/etc/system/local/
+sudo vim server.conf
+
+or better still just paste this on cd /opt/splunk/etc/system/local/
+
+[diskUsage]
+minFreespace = 50
+pollingFrequency = 100000
+pollingTimeFrequency = 10
+
+and that would be sorted
