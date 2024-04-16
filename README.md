@@ -37,7 +37,7 @@ https://github.com/olafhartong/sysmon-modular
 
 ### Ref 3: Splunk inputs.conf
 
-After installing splunk forwarder to listen to my splunk server on 192.168.10.10 on the default port 9997. We need to configure the telemetries to send by opening a Notepad with administrator right. The code below was then insert and saved on the splunk forwarder local file as "inputs.conf"
+After installing splunk forwarder to listen to my splunk server on 192.168.10.10 on the default port 9997. We need to configure the telemetries to send by opening a Notepad with administrator rights. The code below was then insert and saved on the splunk forwarder local file as "inputs.conf"
 
 [WinEventLog://Application]
 
