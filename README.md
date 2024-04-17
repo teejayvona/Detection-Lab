@@ -24,7 +24,8 @@ The goal of the Detection Lab project was to create a regulated setting to simul
 
 ### Ref 1: Network Diagram
 
-![AD Logical Diagram](https://github.com/teejayvona/Detection-Lab/assets/33003865/c2b1b5b5-a729-4eca-8970-3be2d6353009)
+![AD Logical Diagram](https://github.com/teejayvona/Detection-Lab/assets/33003865/4524a778-a1b8-43f1-b488-77ec836bb6a2)
+
 
 This is the network diagram of what I intend achieving at the end of the project
 All these was done using Virtual Box
@@ -96,3 +97,5 @@ pollingFrequency = 100000
 pollingTimeFrequency = 10
 
 and that would be sorted
+
+### Ref 4: 
