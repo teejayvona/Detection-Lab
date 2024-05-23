@@ -119,10 +119,10 @@ We them assume the username 'jadone' has been compromised and type the following
 crowbar -b rdp -u jadoe -C password.txt -s 192.168.10.100/32
 
 
-### Ref 5: View Temeletry on Splunk
+### Ref 6: View Temeletry on Splunk
 Login on to Splunk, we notice difference event ID as well as event ID 4625 which for failed login attempt
 
 Going deeper, we notice all the attempts occured within a minute and the ip is from outside our network
 
-### Ref 5: Coming Soon: Installing PFSense, activating IPS and preventing the bruteforce attack
+### Ref 7: Coming Soon: Installing PFSense, activating IPS and preventing the bruteforce attack
 
