@@ -36,7 +36,7 @@ I made use of Olaf Hartong configuration for my sysmon configuration
 
 https://github.com/olafhartong/sysmon-modular
 
-### Ref 3: Splunk inputs.conf
+### Ref 3: SplunkForwarder Installation using a custom inputs.conf
 
 After installing splunk forwarder to listen to my splunk server on 192.168.10.10 on the default port 9997. We need to configure the telemetries to send by opening a Notepad with administrator rights. The code below was then insert and saved on the splunk forwarder local file as "inputs.conf"
 
@@ -98,4 +98,31 @@ pollingTimeFrequency = 10
 
 and that would be sorted
 
-### Ref 4: 
+### Ref 4: Win10 Pro and ADD Server Installation
+I installed Windwos 10 Pro and ADD Server Desktop edition to use as our taget system and Domain server respectively. 
+
+I then manually added users to the ADD to mimic real users in an organisation. 
+
+Splunk universal forwarder and Sysmon were install on both systems with the addition of ART on Win10 pro only to simulate attack and investigate telemetries.
+
+The users were also given remote desktop rights
+
+### Ref 5: Kali Linux
+Kali was installed on VB from Kali official site. We immediately did update on the repositories and eventually installed crowbar which would be used to perform bruteforce attack.
+
+Crowbar comes with a rockyou.txt file contain a bunch of password
+
+By using nano head -n 20 and pointed to password.txt we created a password list for the first 30 to reduce attempt time
+
+We them assume the username 'jadone' has been compromised and type the following for remote desktop brute force attempt
+
+crowbar -b rdp -u jadoe -C password.txt -s 192.168.10.100/32
+
+
+### Ref 5: View Temeletry on Splunk
+Login on to Splunk, we notice difference event ID as well as event ID 4625 which for failed login attempt
+
+Going deeper, we notice all the attempts occured within a minute and the ip is from outside our network
+
+### Ref 5: Coming Soon: Installing PFSense, activating IPS and preventing the bruteforce attack
+
