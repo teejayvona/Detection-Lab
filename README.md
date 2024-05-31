@@ -16,7 +16,6 @@ The goal of the Detection Lab project was to create a regulated setting to simul
 ### Tools Used
 
 - Splunk - Utilized as a Security Information and Event Management (SIEM) platform, Splunk facilitates the ingestion and analysis of logs for comprehensive security monitoring and incident detection.
-- Wireshark - Employed as a network analysis tool, Wireshark enables the capturing and examination of network traffic for the identification of potential security threats and performance issues.
 - Atomic Red Team - Leveraged for telemetry generation, Atomic Red Team provides tools to simulate realistic network traffic and attack scenarios, aiding in the validation of security controls and detection capabilities.
 - Active Directory - Simulated real-world centralized directory service responsible for overseeing user account management, group memberships, and access permissions throughout the network.
 
