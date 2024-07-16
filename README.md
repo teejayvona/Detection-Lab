@@ -122,6 +122,3 @@ crowbar -b rdp -u jadoe -C password.txt -s 192.168.10.100/32
 Login on to Splunk, we notice difference event ID as well as event ID 4625 which for failed login attempt
 
 Going deeper, we notice all the attempts occured within a minute and the ip is from outside our network
-
-### Ref 7: Coming Soon: Installing PFSense, activating IPS and preventing the bruteforce attack
-
